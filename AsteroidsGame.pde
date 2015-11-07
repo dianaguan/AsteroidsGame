@@ -71,7 +71,7 @@ class SpaceShip extends Floater
       yCorners[1] = 0;
       xCorners[2] = -8;
       yCorners[2] = 8;
-      xCorners[3] = 2;
+      xCorners[3] = 0;
       yCorners[3] = 0;
 
 
