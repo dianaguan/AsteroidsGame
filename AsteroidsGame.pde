@@ -31,28 +31,27 @@ public void draw()
 }
 public void keyPressed(){
   //hyperspace
-  if(key == 'm'){
+  if(key == 'h'){
   
     one.setX((int)(Math.random()*800));
     one.setY((int)(Math.random()*500));
   }
-  //rotate left
-  if(key == CODED && keyCode == UP){
-    one.rotate(-10);
+  if (keyPressed == true){
+    if(keyCode == LEFT){
+      one.rotate(-10);
+    }
+    if(keyCode == RIGHT){
+      one.rotate(10);
+    }
+    if(keyCode == UP){
+      one.accelerate(0.5);
+    }
+    if(keyCode == DOWN){
+      one.accelerate(-0.5);
+    }
   }
-  //rotate right
-  if(key == CODED && keyCode == DOWN){
-    one.rotate(10);
-  }
-  //accelerate
-  if(key== CODED && keyCode == RIGHT){
-    one.accelerate(5);
-  }
-  if(key == CODED && keyCode == LEFT){
-    one.accelerate(-5);
-  }
-
 }
+
 class Star 
 {
   private int myX, myY;
