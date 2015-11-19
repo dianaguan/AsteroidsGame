@@ -126,10 +126,11 @@ class Asteroids extends Floater {
       myColor = color(250);
       myCenterX = Math.random()*800;
       myCenterY = Math.random()*500;
-      setDirectionX(0);
-      setDirectionY(0);
+      setDirectionX((int)(Math.random()*3)-1);
+      setDirectionY((int)(Math.random()*3)-1);
       myPointDirection=0;
       rotSpeed = ((int)(Math.random()*10)-5);
+      
     }
     public void setX(int x){myCenterX = x;}
     public int getX(){return (int)myCenterX;}
