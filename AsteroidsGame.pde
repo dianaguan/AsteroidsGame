@@ -1,8 +1,10 @@
 //your variable declarations here
 SpaceShip one = new SpaceShip();
 Star [] sky = new Star[100];
-Asteroids [] obstacles = new Asteroids[10];
-
+//Asteroids [] obstacles = new Asteroids[10];
+ArrayList <Asteroids> theList = new ArrayList <Asteroids>();
+Asteroids obstacles = new Asteroids(10);
+//theList.add(new Asteroids(10));
 public void setup() 
 {
   //your code here
@@ -10,8 +12,8 @@ public void setup()
   for (int i = 0; i < sky.length; i++){
     sky[i] = new Star();
   }
-  for (int j = 0; j < obstacles.length; j++){
-    obstacles[j] = new Asteroids();
+  for (int nI = 0; nI < theList.size(); nI++){
+    Asteroids obstacles = theList.get(nI);
   }
   
 }
@@ -123,7 +125,7 @@ class Asteroids extends Floater {
      yCorners[5] = 0;
 
       //initialize asteroids variables
-      myColor = color(250);
+      myColor = color(103,71,56);
       myCenterX = Math.random()*800;
       myCenterY = Math.random()*500;
       setDirectionX((int)(Math.random()*3)-1);
