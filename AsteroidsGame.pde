@@ -1,13 +1,10 @@
-//your variable declarations here
 SpaceShip one = new SpaceShip();
 Star [] sky = new Star[100];
 //Asteroids [] obstacles = new Asteroids[10];
 ArrayList <Asteroids> theList = new ArrayList <Asteroids>();
-Asteroids obstacles = new Asteroids(10);
-//theList.add(new Asteroids(10));
+theList.add(new Asteroids);
 public void setup() 
 {
-  //your code here
   size(800,500);
   for (int i = 0; i < sky.length; i++){
     sky[i] = new Star();
@@ -15,7 +12,6 @@ public void setup()
   for (int nI = 0; nI < theList.size(); nI++){
     Asteroids obstacles = theList.get(nI);
   }
-  
 }
 public void draw() 
 {
@@ -26,9 +22,9 @@ public void draw()
   for (int i = 0; i < sky.length; i++){
     sky[i].show();
   }
-  for (int j = 0; j < obstacles.length; j++){
-    obstacles[j].show();
-    obstacles[j].move();
+  for (int j = 0; j < theList.size; j++){
+    theList.show();
+    theList.move();
   }
 }
 public void keyPressed(){
@@ -38,6 +34,7 @@ public void keyPressed(){
     one.setX((int)(Math.random()*800));
     one.setY((int)(Math.random()*500));
   }
+  //rotate and accelerate
   if (keyPressed == true){
     if(keyCode == LEFT){
       one.rotate(-10);
@@ -54,6 +51,7 @@ public void keyPressed(){
   }
 }
 
+//star class
 class Star 
 {
   private int myX, myY;
@@ -66,9 +64,9 @@ class Star
     ellipse(myX, myY, 1, 1);
   }
 }
+//spaceship class
 class SpaceShip extends Floater  
 {   
-    //your code here
     public SpaceShip(){
       //spaceship shape
       corners = 4;
@@ -144,6 +142,7 @@ class Asteroids extends Floater {
     public double getDirectionY(){return myDirectionY;}
     public void setPointDirection(int degrees){myPointDirection = degrees;}
     public double getPointDirection(){return myPointDirection;}
+    //new asteroid move function
     public void move()
     {
       rotate(rotSpeed);
