@@ -1,7 +1,7 @@
 SpaceShip one = new SpaceShip();
 Star [] sky = new Star[100];
 //Asteroids [] obstacles = new Asteroids[10];
-ArrayList <Asteroids> theList = new ArrayList <Asteroids>();
+private ArrayList <Asteroids> theList;
 theList.add(new Asteroids);
 public void setup() 
 {
@@ -9,8 +9,9 @@ public void setup()
   for (int i = 0; i < sky.length; i++){
     sky[i] = new Star();
   }
-  for (int nI = 0; nI < theList.size(); nI++){
-    Asteroids obstacles = theList.get(nI);
+  theList = new ArrayList <Asteroids>();
+  for(int i=0; i<10; i++){
+    theList.add(new Asteroids());
   }
 }
 public void draw() 
@@ -23,8 +24,8 @@ public void draw()
     sky[i].show();
   }
   for (int j = 0; j < theList.size; j++){
-    theList.show();
-    theList.move();
+    theList.get(i).show();
+    theList.get(i).move();
   }
 }
 public void keyPressed(){
