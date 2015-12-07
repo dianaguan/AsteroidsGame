@@ -10,7 +10,7 @@ public void setup()
     sky[i] = new Star();
   }
   theList = new ArrayList <Asteroids>();
-  for(int i=0; i<10; i++){
+  for(int a=0; a<10; a++){
     theList.add(new Asteroids());
   }
 }
@@ -23,9 +23,9 @@ public void draw()
   for (int i = 0; i < sky.length; i++){
     sky[i].show();
   }
-  for (int j = 0; j < theList.size; j++){
-    theList.get(i).show();
-    theList.get(i).move();
+  for (int a = 0; a < theList.size; a++){
+    theList.get(a).show();
+    theList.get(a).move();
   }
 }
 public void keyPressed(){
