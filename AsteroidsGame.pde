@@ -196,8 +196,13 @@ class Bullet extends Floater
     public void show()
     {
        fill(255,255,255);
-       ellipse((float)myCenterX,(float)myCenterY,50,50);
-  }
+       ellipse((float)myCenterX,(float)myCenterY,20,20);
+    }
+    public void move()
+    {
+        myCenterX+=myDirectionX;
+        myCenterY+=myDirectionY;
+    }
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
