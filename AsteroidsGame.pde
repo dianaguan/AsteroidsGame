@@ -12,12 +12,6 @@ public void setup()
   for (int j = 0; j < 15; j++){
      theList.add(new Asteroids());
   }
-  //bullet setup make empty list
-  // for (int b = 0; b < 15; b++){
-  //    bull.add(new Bullet());
-  // }
-  // bull.add(new Bullet());
- 
 }
 public void draw() 
 {
@@ -33,11 +27,24 @@ public void draw()
     theList.get(j).move();
     if(dist(theList.get(j).getX(), theList.get(j).getY(), one.getX(), one.getY())<25)
       theList.remove(j);
+
+      for (int b = 0; b < bull.size(); b++){
+        
+          if(dist(theList.get(j).getX(),theList.get(j).getY(), bull.get(b).getX(), bull.get(b).getY())<25)
+            theList.remove(j);
+      }
+  for (int b =0; b <bull.size(); b++)
+  {
+        bull.get(b).show();
+        bull.get(b).move();
   }
-  for (int b = 0; b < bull.size(); b++){
-    bull.get(b).show();
-    bull.get(b).move();
-  }
+}
+  // for (int b = 0; b < bull.size(); b++){
+  //   bull.get(b).show();
+  //   bull.get(b).move();
+  //   if(dist(theList.get(b).getX(),theList.get(b).getY(), bull.getX(), bull.getY())<25)
+  //      theList.remove(b);
+  // }
 
 }
 
